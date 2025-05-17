@@ -458,7 +458,7 @@ namespace DA_NiEL
         {
             try
             {
-                jumpscare_pcb.Image = formMenu.jumpscare_K_ls[frame];
+                //jumpscare_pcb.Image = formMenu.jumpscare_K_ls[frame];
                 frame++;
             }
             catch
@@ -478,8 +478,8 @@ namespace DA_NiEL
             if (Animatronic_step(K_step, door1))
             {
                 GameOverEffect();
-                jumpscare_timer.Start();
                 scare = 'K';
+                //jumpscare_timer.Start();
             }
             else
             {
@@ -489,12 +489,9 @@ namespace DA_NiEL
 
         private int Animatronic_AI(int step, int maxAI)
         {
-            if (step != 7)
+            if (AI.Next(1, 21) <= maxAI)
             {
-                if (AI.Next(1, 21) <= maxAI)
-                {
-                    step++;
-                }
+                step++;
             }
 
             return step;
@@ -533,6 +530,11 @@ namespace DA_NiEL
             right_look.Visible = false;
             camera_btn.Visible = false;
             soundEffects.Stop();
+            K_timer.Stop();
+            E_timer.Stop();
+            D_timer.Stop();
+            music_box.Stop();
+            S_timer.Stop();
 
             fan.settings.mute = true;
             background1.settings.mute = true;
