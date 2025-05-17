@@ -10,15 +10,16 @@ namespace DA_NiEL
 {
     internal class FileIO
     {
-        static private string k_filename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "\\k_jumpscare\\", "k_0.png");
-
+        static private string k_filfolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "\\appdata", "\\k_jumpscare");
+        static private string night_data = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "\\appdata\\", "animatronics.txt");
+        static public int hany { get; private set; }
         static public List<Animatronic> Beolvasas()
         {
             List<Animatronic> animatronics = new List<Animatronic>();
 
             try
             {
-                StreamReader sr = new StreamReader("animatronics.txt");
+                StreamReader sr = new StreamReader(night_data);
 
                 while (!sr.EndOfStream)
                 {
@@ -44,7 +45,7 @@ namespace DA_NiEL
 
                     int newindex = animatronics.IndexOf(newone);
 
-                    List<Image> jumpscare = JumpscareUpload();
+                    List<Image> jumpscare = JumpscareUpload(k_filfolder);
 
                     animatronics[newindex].jumpscAdd(name, jumpscare);
                 }
@@ -59,11 +60,28 @@ namespace DA_NiEL
             return animatronics;
         }
 
-        private static List<Image> JumpscareUpload()
+        private static List<Image> JumpscareUpload(string folder)
         {
             List <Image> jumpscare = new List<Image>();
 
-
+            bool finish = false;
+            int numb = 1;
+            do
+            {
+                try
+                {
+                    string file = Path.Combine(folder, $"jumpscare_{numb}");
+                    Image frame = Bitmap.FromFile(file);
+                    jumpscare.Add(frame);
+                    hany++;
+                    numb++;
+                }
+                catch (Exception)
+                {
+                    finish = true;
+                }
+            }
+            while (!finish);
 
             return jumpscare;
         }

@@ -32,6 +32,7 @@ namespace DA_NiEL
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Start_button = new System.Windows.Forms.Button();
             this.Exit_button = new System.Windows.Forms.Button();
             this.Night1_button = new System.Windows.Forms.Label();
@@ -44,6 +45,7 @@ namespace DA_NiEL
             this.patch_note_lbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.star_pcb)).BeginInit();
             this.SuspendLayout();
@@ -239,5 +241,6 @@ namespace DA_NiEL
         private Label patch_note_lbl;
         private Label label1;
         private ProgressBar progressBar1;
+        private Timer timer1;
     }
 }

@@ -31,6 +31,8 @@ namespace DA_NiEL
 
             progressBar1.Maximum = 18;
 
+            ProgressBarSet();
+
             patch_note_lbl.Visible = false;
             Start_button.Visible = false;
             Exit_button.Visible = false;
@@ -58,6 +60,11 @@ namespace DA_NiEL
                     control.MouseLeave += Button_MouseLeave;
                 }
             }
+        }
+
+        private void ProgressBarSet()
+        {
+            progressBar1.Value = FileIO.hany;
         }
 
         private void Start_button_Click(object sender, EventArgs e)
