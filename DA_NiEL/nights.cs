@@ -78,6 +78,11 @@ namespace DA_NiEL
             soundEffects.Start();
         }
 
+        public static int GetScare()
+        {
+            return FileIO.hany;
+        }
+
         private int GetRandomInterval()
         {
             return random.Next(2000, 7000);

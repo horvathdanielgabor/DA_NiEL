@@ -198,6 +198,10 @@ namespace DA_NiEL
             this.progressBar1.Size = new System.Drawing.Size(814, 33);
             this.progressBar1.TabIndex = 13;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // formMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

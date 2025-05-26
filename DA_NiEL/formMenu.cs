@@ -64,7 +64,7 @@ namespace DA_NiEL
 
         private void ProgressBarSet()
         {
-            progressBar1.Value = FileIO.hany;
+            progressBar1.Value = nights.GetScare();
         }
 
         private void Start_button_Click(object sender, EventArgs e)
@@ -262,6 +262,11 @@ namespace DA_NiEL
             {
                 ShowStar();
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }
