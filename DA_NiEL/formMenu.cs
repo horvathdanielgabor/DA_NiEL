@@ -31,7 +31,7 @@ namespace DA_NiEL
 
             progressBar1.Maximum = 18;
 
-            ProgressBarSet();
+            
 
             patch_note_lbl.Visible = false;
             Start_button.Visible = false;
@@ -266,7 +266,7 @@ namespace DA_NiEL
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
+            ProgressBarSet();
         }
     }
 }
